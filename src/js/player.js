@@ -2926,7 +2926,9 @@ class Player extends Component {
     if (this.tech_) {
       this.tech_.clearTracks('text');
     }
-    this.cache_.media = null;
+    if (this.cache_) {
+      this.cache_.media = null;
+    }
     this.loadTech_(this.options_.techOrder[0], null);
     this.techCall_('reset');
     if (isEvented(this)) {
