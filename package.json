@@ -30,7 +30,6 @@
     "copy:fonts": "shx cp -R node_modules/videojs-font/fonts dist/font",
     "copy:examples": "shx cp -R docs/examples dist/",
     "zip": "cd dist && cross-env bestzip \"./video-js-${npm_package_version}.zip\" * && cd ..",
-
     "build-dev": "npm-run-all clean lint-errors build:js build:css build:lang build:test",
     "build:test": "npm-run-all build:test:*",
     "build:test:a11y": "shx cp sandbox/descriptions.html.example sandbox/descriptions.test-a11y.html",
@@ -57,7 +56,6 @@
     "docs:lint": "remark -- './{,!(node_modules)/**/}!(CHANGELOG)*.md'",
     "docs:fix": "remark --output -- './{,!(node_modules)/**/}!(CHANGELOG)*.md'",
     "docs:lang": "node build/translations.js",
-
     "netlify": "node ./build/netlify-docs.js",
     "update-changelog": "conventional-changelog -p videojs -i CHANGELOG.md -s",
     "prepublishOnly": "run-p build",
@@ -172,6 +170,5 @@
       "node build/translations.js",
       "git add docs/translations-needed.md"
     ]
-
   }
 }
